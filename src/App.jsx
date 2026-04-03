@@ -26,10 +26,9 @@ function Navigation () {
         <div className='flex flex-wrap gap-2 justify-center'>
           {sections.map((section) => (
             <button
-            className={`px-4 py-2 rounded-lg font-medium bg-blue-600 text-white mr-2 mt-2`}
-              key={section.id}
-              >
-                <span>{section.icon}</span>
+              key={section.id} className={`px-4 py-2 rounded-lg font-medium bg-blue-600 text-white mr-2 mt-2 hover:bg-sky-800`}
+            >
+                <span className='mr-2'>{section.icon}</span>
                 {section.label}
               </button>
           ))}
@@ -40,11 +39,17 @@ function Navigation () {
 }
 
 function AppContent () {
-  return <div className={`min-h-screen bg-gray-800`}>
+  return(
+  <div className={`min-h-screen bg-gray-800`}>
     <Navigation/>
-    <h1 className="text-3xl text-white font-bold underline">
-    Hello world!
-  </h1></div>;
+    <div className='container mx-auto px-4 py-8'>
+      <header>
+        <h1 className='text-4xl font-bold text-white mb-6'>React Props explained</h1>
+        <p className='text-lg text-gray-300 mb-8'>A comprehensive guide to understanding props in React.</p>
+      </header>
+    </div>
+    </div>
+    );
 }
 
 function App() {
